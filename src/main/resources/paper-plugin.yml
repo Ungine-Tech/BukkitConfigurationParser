@@ -1,0 +1,5 @@
+name: bukkitConfigurationParser
+version: '${version}'
+main: net.livingsky.minecraft.plugin.bukkitconfigurationparser.BukkitConfigurationParser
+api-version: '1.20'
+load: STARTUP

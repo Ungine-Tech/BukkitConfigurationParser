@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id "io.freefair.lombok" version "8.4"
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'net.livingsky.minecraft.plugin'
@@ -19,6 +21,13 @@ repositories {
 
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT"
+    implementation 'org.reflections:reflections:0.10.2'
+    shadow 'org.reflections:reflections:0.10.2'
+
+    testImplementation "org.junit.jupiter:junit-jupiter:5.10.0"
+    testImplementation "io.papermc.paper:paper-api:1.20.2-R0.1-SNAPSHOT"
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
 def targetJavaVersion = 17
@@ -44,4 +53,8 @@ processResources {
     filesMatching('paper-plugin.yml') {
         expand props
     }
+}
+
+test {
+    useJUnitPlatform()
 }

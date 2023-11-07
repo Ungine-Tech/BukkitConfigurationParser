@@ -2,10 +2,14 @@ package net.livingsky.minecraft.plugin.bukkitconfigurationparser;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * @author mikoto
+ */
 public final class BukkitConfigurationParser extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         // Plugin startup logic
 
     }
